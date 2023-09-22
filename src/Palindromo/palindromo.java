@@ -13,27 +13,33 @@ import java.util.Scanner;
 public class palindromo {
     
     public void pal (){
-    Scanner scanner = new Scanner (System.in);
+    // Crear un objeto Scanner para leer la entrada del usuario
+    Scanner scanner = new Scanner(System.in);
     
+    // Leer una línea de entrada del usuario y convertirla a minúsculas
     String palabra = scanner.nextLine().toLowerCase().replace(" ", "");
     
+    // Inicializar una cadena vacía para almacenar la versión invertida de la palabra
     String invertido = "";
     
+    // Declarar una variable de tipo char para almacenar caracteres temporales
     char auxiliar;
+    
+    // Iterar a través de la palabra desde el último carácter hasta el primero
+    for (int i = palabra.length() - 1; i >= 0; i--) {
+        // Obtener el carácter en la posición actual
+        auxiliar = palabra.charAt(i);
         
+        // Agregar el carácter actual a la cadena invertida
+        invertido = invertido + auxiliar;
+    }
     
-        for (int i = palabra.length()-1; i>=0;i--) {
-            auxiliar = palabra.charAt(i);
-            
-            invertido = invertido + auxiliar;
-        }
-    
-        if (palabra.equals(invertido)) {
-            System.out.println("es palindromo");
-        }
-        else{
-            System.out.println("No es palindromo");
-        }
+    // Comprobar si la palabra original es igual a la palabra invertida
+    if (palabra.equals(invertido)) {
+        System.out.println("Es un palíndromo"); // Imprimir si es un palíndromo
+    } else {
+        System.out.println("No es un palíndromo"); // Imprimir si no es un palíndromo
+    }
     
     }
     
